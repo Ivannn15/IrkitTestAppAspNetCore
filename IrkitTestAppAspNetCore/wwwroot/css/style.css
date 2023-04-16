@@ -1,0 +1,60 @@
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    margin-top: 4%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+  
+.block {
+    text-align: center;
+    font-size: 25px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 200px;
+    margin: 15px;
+    background-color: #522473;
+}
+
+.list_items {
+    width: 60%;
+    padding-left: 10%;
+    padding-top: 5%;
+    color: white;
+}
+
+.contact_info{
+    padding-top: 5%;
+    width: 50%;
+}
+
+.contact_info p {
+    font-size: 17px;
+    color: white;
+}
+
+.block a {
+    color: white;
+    text-decoration: none;
+}
+
+.form_cantainer {
+    margin-top: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+.form_cantainer button {
+    border: 1px solid;
+}
+
+.custom-file {
+    margin-right: 1%;
+}
