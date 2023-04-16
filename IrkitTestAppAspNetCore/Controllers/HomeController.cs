@@ -26,6 +26,13 @@ namespace IrkitTestAppAspNetCore.Controllers
 
         public async Task<IActionResult> addNewEmployee(IFormFile xmlFile)
         {
+
+            if (Path.GetExtension(xmlFile.FileName) != ".xml")
+            {
+                ViewBag.ErrorMessage = "Это не xml";
+                return View("Index", irkitdbContext.Employees.FirstOrDefault());
+            }
+
             string filePath = Path.Combine(Path.GetTempPath(), xmlFile.FileName);
             using (var stream = new FileStream(filePath, FileMode.Create))
             {
@@ -73,16 +80,14 @@ namespace IrkitTestAppAspNetCore.Controllers
                 if (temp != null)
                 {
                     ViewBag.ErrorMessage = "Такой пользователь уже существует";
-                    break;
                 }
                 else
                 {
                     irkitdbContext.SaveChanges();
                     return View("Index", employee);
                 }
-
             }
-                return View("Index", irkitdbContext.Employees.FirstOrDefault());
+            return View("Index", irkitdbContext.Employees.FirstOrDefault());
         }
 
         public IActionResult Index()
